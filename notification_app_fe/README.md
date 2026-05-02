@@ -1,16 +1,34 @@
-# React + Vite
+# Priority Notification System - Affordmed Evaluation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a full-stack application designed to fetch, sort, and display notifications based on a specific priority hierarchy. Built for the Affordmed technical evaluation.
 
-Currently, two official plugins are available:
+##  Features
+- **Priority-Based Sorting**: Notifications are automatically ordered: Placement (Weight 3) > Result (Weight 2) > Event (Weight 1).
+- **Recency Tie-Breaker**: For items with the same priority, the most recent timestamp is shown first.
+- **Real-Time Filtering**: Users can filter notifications by category using the UI buttons.
+- **Authentication**: Backend integration with Bearer Token for secure API access.
+- **Responsive UI**: A modern blue-themed dashboard for clear data visualization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+##  Technical Stack
+- **Frontend**: React.js, CSS3
+- **Backend**: Node.js, Express.js
+- **API Communication**: Axios (Backend), Fetch API (Frontend)
 
-## React Compiler
+##  Setup Instructions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend
+1. Navigate to the backend folder: `cd notification_app_be`
+2. Install dependencies: `npm install express axios cors`
+3. Start the server: `node index.js` (Runs on port 5000)
 
-## Expanding the ESLint configuration
+### Frontend
+1. Navigate to the frontend folder: `cd notification_app_fe`
+2. Install dependencies: `npm install`
+3. Start the app: `npm run dev` (Runs on port 5173)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Design Decisions
+- **Mock Data Fallback**: I implemented a fallback mechanism that serves sorted mock data if the external evaluation API is unreachable or blocked. This ensures the UI remains functional for review at all times.
+- **Visual Theme**: Transitioned to a "Deep Blue" gradient theme for a professional, high-contrast look suitable for a priority dashboard.
+
+**Developer**: Banu Pragathi  
+**Reg ID**: RA2311026020087
